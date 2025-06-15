@@ -1,0 +1,184 @@
+body {   
+  display: flex;   
+  justify-content: center;   
+  align-items: center;   
+  color: #1a237e; 
+  font-family: 'Shadows Into Light', cursive;
+}  
+
+.kaart1 {   
+  background-color: #64b5f6;   
+  height: 600px;   
+  width: 80vh;   
+  text-align: center;   
+  border-radius: 25px;   
+  box-shadow: 5px 5px 5px black; 
+  margin-top: 100px;
+  perspective: 1500px; 
+}  
+
+.flip-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.kaart1.open .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.voorkant, .achterkant {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 25px;
+}
+
+.voorkant {
+  background: inherit;
+}
+
+.achterkant {
+  background: #ffecb3; 
+  transform: rotateY(180deg);
+}
+
+.foto1 {   
+  border: 3px solid #cfd8dc;   
+  border-radius: 25px; 
+  width: 200px;
+  height: auto;
+}  
+
+.vorm1 {   
+  position: absolute;   
+  top: 100px;   
+  left: 600px; 
+}  
+
+.vorm2 {   
+  position: absolute;   
+  top: 400px;   
+  left: 150px; 
+}  
+
+.heart {   
+  width: 50px;   
+  height: 50px;   
+  background: #ff4081;   
+  border: none;   
+  cursor: pointer;   
+  position: relative;   
+  transform: rotate(-45deg);   
+  margin: 20px; 
+}  
+
+.heart::before, .heart::after {   
+  content: "";   
+  width: 50px;   
+  height: 50px;   
+  background: #ff4081;   
+  border-radius: 50%;   
+  position: absolute; 
+}  
+
+.heart::before {   
+  top: -25px;   
+  left: 0; 
+}  
+
+.heart::after {   
+  top: 0;   
+  left: 25px; 
+}  
+
+.heart:hover, .heart:hover::before, .heart:hover::after {   
+  background: #f50057; 
+}  
+
+.heart:active {   
+  transform: rotate(-45deg) scale(0.95); 
+}   
+
+.btn {   
+  width: 100px;   
+  height: 50px;   
+  border-radius: 25px;   
+  background-color: #ff8f00;   
+  border: 3px solid #cfd8dc;   
+  color: #1a237e;   
+  font-family: 'Shadows Into Light', cursive;   
+  position: absolute;   
+  top: 500px;   
+  left: 500px; 
+}  
+
+.btn:hover {   
+  cursor: grab;   
+  transform: scale(1.02);   
+  background-color: #cfd8dc;   
+  border: 3px solid #ff8f00; 
+}  
+
+.kromhout {   
+  height: 100px;   
+  width: 100px;   
+  position: absolute;   
+  top: 100px;   
+  left: 60px; 
+}  
+
+.kromhout1 {   
+  height: 100px;   
+  width: 100px;   
+  position: absolute;   
+  top: 250px;   
+  left: 550px; 
+}  
+
+.h32 {   
+  position: absolute; 
+  top: 250px;   
+  left: 50px; 
+}  
+
+.h31 {   
+  position: absolute; 
+  top: 350px;   
+  left: 350px; 
+}
+
+#achter-foto {
+  width: 200px;
+  height: auto;
+  border-radius: 15px;
+  border: 2px solid #1a237e;
+  margin-top: 20px;
+  transition: opacity 0.3s;
+}
+
+#foto-tekst {
+  font-size: 1.2em;
+  margin-top: 10px;
+  transition: opacity 0.3s;
+}
+
+.btnfoto {
+  width: 100px;   
+  height: 50px;   
+  border-radius: 25px;   
+  background-color: #ff8f00;   
+  border: 3px solid #cfd8dc;   
+  color: #1a237e;   
+  font-family: 'Shadows Into Light', cursive;   
+}
+
+.btnfoto:hover {   
+  cursor: grab;   
+  transform: scale(1.02);   
+  background-color: #cfd8dc;   
+  border: 3px solid #ff8f00; 
+}  

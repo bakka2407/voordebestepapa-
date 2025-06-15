@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Voor papa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="kaart1">
+    <div class="flip-inner">
+      <!-- Voorkant -->
+      <div class="voorkant">
+        <h1>Voor de beste vader!</h1>
+        <img src="machiel.webp" alt="Papa" class="foto1" />
+        <div class="vorm1">
+          <button class="heart" onclick="audio2start()"></button>
+        </div>
+        <div class="vorm2">
+          <button class="heart" onclick="audio1start()"></button>
+        </div>
+        <button class="btn open-btn">Open</button>
+        <img src="kromhout.png" alt="kromhout" class="kromhout" />
+        <img src="kromhout.png" alt="kromhout" class="kromhout1" />
+        <h3 class="h31">Love you!</h3>
+        <h3 class="h32">Beste dad ever!</h3>
+      </div>
+
+      <!-- Achterkant -->
+      <div class="achterkant">
+        <h2>Herinneringen</h2>
+        <img id="achter-foto" src="machiel.webp" alt="Foto" />
+        <p id="foto-tekst">Dit is de eerste foto van papa.</p>
+        <button onclick="volgendeFoto()" class="btnfoto">Volgende foto</button><br>
+        <button class="btn sluit-btn">Sluit</button>
+      </div>
+    </div>
+  </div>
+
+  <audio src="tutumachiel.mp3" id="audio1" preload="auto"></audio>
+  <audio src="vadermachiel.mp3" id="audio2" preload="auto"></audio>
+
+  <script src="server.js"></script>
+
+</body>
+</html>
+
