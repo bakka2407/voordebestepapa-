@@ -167,7 +167,7 @@ body {
   transition: background-color 0.3s, transform 0.2s, border 0.3s;
   user-select: none;
   display: block;
-  margin: 50px;
+  margin: 15px auto 0 auto;
   width: 150px;
   max-width: 90%;
 }
