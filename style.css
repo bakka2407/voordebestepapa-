@@ -16,16 +16,17 @@ body {
   background-color: #64b5f6;
   width: 90vw;
   max-width: 600px;
-  aspect-ratio: 3 / 4;  /* breedte : hoogte */
+  aspect-ratio: 3 / 4;
   border-radius: 25px;
   box-shadow: 5px 5px 5px black;
   perspective: 1500px;
   position: relative;
-  overflow: hidden;
   padding: 20px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
 
 .flip-inner {
@@ -52,6 +53,12 @@ body {
 
 .voorkant {
   background: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .achterkant {
@@ -61,16 +68,17 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 10px;
   box-sizing: border-box;
+  text-align: center;
 }
 
 .foto1, #achter-foto {
+  width: 50%;
+  max-width: 250px;
   border-radius: 25px;
   border: 3px solid #cfd8dc;
-  width: 40%;
-  height: auto;
-  margin: 20px 0;
+  margin: 15px 0;
   transition: opacity 0.3s;
 }
 
@@ -81,59 +89,59 @@ body {
 #foto-tekst {
   font-size: 1.2em;
   margin-top: 10px;
-  transition: opacity 0.3s;
-  text-align: center;
 }
 
-/* Container voor vormen en kromhout */
 .vormen-container {
-  width: 100%;
   display: flex;
-  justify-content: space-between;
-  margin: 20px 0;
   flex-wrap: wrap;
-  gap: 15px;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+  width: 100%;
+  max-width: 560px;
+  box-sizing: border-box;
 }
 
 .vorm1, .vorm2, .kromhout, .kromhout1 {
-  width: 22%;
-  aspect-ratio: 1 / 1;
+  flex: 1 1 40%;
+  max-width: 40%;
+  height: auto;
+  min-width: 100px;
+  max-height: 100px;
   object-fit: contain;
 }
 
-/* Groter hart */
+/* Grote hart, maar nu relatief gepositioneerd binnen .kaart1 */
 .heart {
-  position: absolute;
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   background: #ff4081;
   border: none;
   cursor: pointer;
-  top: 75%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(-45deg);
-  transform-origin: center;
-  z-index: 10;
+  position: relative;
+  margin: 20px auto;
+  transform: rotate(-45deg);
+  display: block;
 }
 
 .heart::before,
 .heart::after {
   content: "";
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   background: #ff4081;
   border-radius: 50%;
   position: absolute;
 }
 
 .heart::before {
-  top: -30px;
+  top: -35px;
   left: 0;
 }
 
 .heart::after {
   top: 0;
-  left: 30px;
+  left: 35px;
 }
 
 .heart:hover,
@@ -143,10 +151,10 @@ body {
 }
 
 .heart:active {
-  transform: translate(-50%, -50%) rotate(-45deg) scale(0.95);
+  transform: rotate(-45deg) scale(0.95);
 }
 
-/* Buttons */
+/* Buttons centraal onderaan in flexbox */
 .btn, .btnfoto {
   border-radius: 25px;
   background-color: #ff8f00;
@@ -158,83 +166,60 @@ body {
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s, border 0.3s;
   user-select: none;
-  display: inline-block;
-}
-
-.btn {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 150px;
-  height: 50px;
-}
-
-.btn:hover {
-  background-color: #cfd8dc;
-  border: 3px solid #ff8f00;
-  transform: translateX(-50%) scale(1.02);
-  cursor: grab;
-}
-
-.btnfoto {
-  width: 120px;
-  height: 50px;
-  margin: 20px auto 0;
   display: block;
+  margin: 15px auto 0 auto;
+  width: 150px;
+  max-width: 90%;
 }
 
-.btnfoto:hover {
+.btn:hover, .btnfoto:hover {
   background-color: #cfd8dc;
   border: 3px solid #ff8f00;
   transform: scale(1.02);
   cursor: grab;
 }
 
-/* Responsive voor mobiel */
-@media (max-width: 600px) {
+/* Responsive voor kleinere schermen */
+@media (max-width: 480px) {
   .kaart1 {
     width: 95vw;
     padding: 15px;
   }
 
   .foto1, #achter-foto {
-    width: 60%;
+    width: 70%;
+    max-width: none;
   }
 
   .vorm1, .vorm2, .kromhout, .kromhout1 {
-    width: 45%;
+    flex: 1 1 45%;
+    max-width: 45%;
+    min-width: 80px;
+    max-height: 80px;
   }
 
   .heart {
-    width: 45px;
-    height: 45px;
-    top: 70%;
+    width: 55px;
+    height: 55px;
+    margin: 15px auto;
   }
 
   .heart::before,
   .heart::after {
-    width: 45px;
-    height: 45px;
-    top: -22.5px;
-    left: 0;
+    width: 55px;
+    height: 55px;
+  }
+
+  .heart::before {
+    top: -27.5px;
   }
 
   .heart::after {
-    left: 22.5px;
-    top: 0;
+    left: 27.5px;
   }
 
-  .btn {
-    position: static;
-    transform: none;
-    margin-top: 15px;
-    width: 70vw;
-    max-width: 300px;
-  }
-
-  .btnfoto {
-    width: 70vw;
-    max-width: 300px;
+  .btn, .btnfoto {
+    width: 90vw;
+    max-width: none;
   }
 }
