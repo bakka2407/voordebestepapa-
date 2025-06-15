@@ -15,7 +15,7 @@ body {
 .kaart1 {
   background-color: #64b5f6;
   width: 90vw;
-  width: 800px;
+  max-width: 800px;
   aspect-ratio: 3 / 4;
   border-radius: 25px;
   box-shadow: 5px 5px 5px black;
@@ -49,21 +49,6 @@ body {
   backface-visibility: hidden;
   top: 0;
   left: 0;
-}
-
-.voorkant {
-  background: inherit;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  box-sizing: border-box;
-}
-
-.achterkant {
-  background: #ffecb3;
-  transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -71,6 +56,15 @@ body {
   padding: 10px;
   box-sizing: border-box;
   text-align: center;
+}
+
+.voorkant {
+  background: inherit;
+}
+
+.achterkant {
+  background: #ffecb3;
+  transform: rotateY(180deg);
 }
 
 .foto1, #achter-foto {
@@ -111,7 +105,7 @@ body {
   object-fit: contain;
 }
 
-/* Grote hart, maar nu relatief gepositioneerd binnen .kaart1 */
+/* Hartje */
 .heart {
   width: 70px;
   height: 70px;
@@ -119,9 +113,10 @@ body {
   border: none;
   cursor: pointer;
   position: relative;
-  margin: 20px auto;
+  margin: 20px auto 0 auto;
   transform: rotate(-45deg);
   display: block;
+  transition: background-color 0.3s;
 }
 
 .heart::before,
@@ -132,6 +127,7 @@ body {
   background: #ff4081;
   border-radius: 50%;
   position: absolute;
+  transition: background-color 0.3s;
 }
 
 .heart::before {
@@ -154,7 +150,7 @@ body {
   transform: rotate(-45deg) scale(0.95);
 }
 
-/* Buttons centraal onderaan in flexbox */
+/* Buttons */
 .btn, .btnfoto {
   border-radius: 25px;
   background-color: #ff8f00;
@@ -167,7 +163,7 @@ body {
   transition: background-color 0.3s, transform 0.2s, border 0.3s;
   user-select: none;
   display: block;
-  margin: 15px auto 0 auto;
+  margin: 15px auto 0 auto; /* alleen bovenmarge zodat ze netjes onder elkaar blijven */
   width: 150px;
   max-width: 90%;
 }
@@ -201,7 +197,7 @@ body {
   .heart {
     width: 55px;
     height: 55px;
-    margin: 15px auto;
+    margin: 15px auto 0 auto;
   }
 
   .heart::before,
