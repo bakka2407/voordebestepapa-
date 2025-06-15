@@ -1,21 +1,29 @@
-body {   
-  display: flex;   
-  justify-content: center;   
-  align-items: center;   
-  color: #1a237e; 
-  font-family: 'Shadows Into Light', cursive;
-}  
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
 
-.kaart1 {   
-  background-color: #64b5f6;   
-  height: 600px;   
-  width: 80vh;   
-  text-align: center;   
-  border-radius: 25px;   
-  box-shadow: 5px 5px 5px black; 
-  margin-top: 100px;
-  perspective: 1500px; 
-}  
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #1a237e;
+  font-family: 'Shadows Into Light', cursive;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: #f0f0f0;
+}
+
+.kaart1 {
+  background-color: #64b5f6;
+  width: 80vw;
+  max-width: 600px;
+  aspect-ratio: 3 / 4;
+  text-align: center;
+  border-radius: 25px;
+  box-shadow: 5px 5px 5px black;
+  margin: 20px;
+  perspective: 1500px;
+  position: relative;
+}
 
 .flip-inner {
   width: 100%;
@@ -42,117 +50,131 @@ body {
 }
 
 .achterkant {
-  background: #ffecb3; 
+  background: #ffecb3;
   transform: rotateY(180deg);
 }
 
-.foto1 {   
-  border: 3px solid #cfd8dc;   
-  border-radius: 25px; 
-  width: 200px;
+.foto1 {
+  border: 3px solid #cfd8dc;
+  border-radius: 25px;
+  width: 40%;
   height: auto;
-}  
+  margin-top: 20px;
+}
 
-.vorm1 {   
-  position: absolute;   
-  top: 100px;   
-  left: 600px; 
-}  
+.vorm1 {
+  position: absolute;
+  top: 15%;
+  left: 70%;
+  width: 10%;
+}
 
-.vorm2 {   
-  position: absolute;   
-  top: 400px;   
-  left: 150px; 
-}  
+.vorm2 {
+  position: absolute;
+  top: 60%;
+  left: 20%;
+  width: 10%;
+}
 
-.heart {   
-  width: 50px;   
-  height: 50px;   
-  background: #ff4081;   
-  border: none;   
-  cursor: pointer;   
-  position: relative;   
-  transform: rotate(-45deg);   
-  margin: 20px; 
-}  
+.kromhout {
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  width: 15%;
+}
 
-.heart::before, .heart::after {   
-  content: "";   
-  width: 50px;   
-  height: 50px;   
-  background: #ff4081;   
-  border-radius: 50%;   
-  position: absolute; 
-}  
+.kromhout1 {
+  position: absolute;
+  top: 40%;
+  left: 80%;
+  width: 15%;
+}
 
-.heart::before {   
-  top: -25px;   
-  left: 0; 
-}  
+/* GROTER HART */
+.heart {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  width: 30%;
+  aspect-ratio: 1 / 1;
+  background: #ff4081;
+  border: none;
+  cursor: pointer;
+  transform: rotate(-45deg);
+  transform-origin: center;
+  translate: -50% 0;
+}
 
-.heart::after {   
-  top: 0;   
-  left: 25px; 
-}  
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #ff4081;
+  border-radius: 50%;
+}
 
-.heart:hover, .heart:hover::before, .heart:hover::after {   
-  background: #f50057; 
-}  
+.heart::before {
+  top: -50%;
+  left: 0;
+}
 
-.heart:active {   
-  transform: rotate(-45deg) scale(0.95); 
-}   
+.heart::after {
+  top: 0;
+  left: 50%;
+}
 
-.btn {   
-  width: 100px;   
-  height: 50px;   
-  border-radius: 25px;   
-  background-color: #ff8f00;   
-  border: 3px solid #cfd8dc;   
-  color: #1a237e;   
-  font-family: 'Shadows Into Light', cursive;   
-  position: absolute;   
-  top: 500px;   
-  left: 500px; 
-}  
+.heart:hover,
+.heart:hover::before,
+.heart:hover::after {
+  background: #f50057;
+}
 
-.btn:hover {   
-  cursor: grab;   
-  transform: scale(1.02);   
-  background-color: #cfd8dc;   
-  border: 3px solid #ff8f00; 
-}  
+.heart:active {
+  transform: rotate(-45deg) scale(0.95);
+}
 
-.kromhout {   
-  height: 100px;   
-  width: 100px;   
-  position: absolute;   
-  top: 100px;   
-  left: 60px; 
-}  
+.btn {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  aspect-ratio: 2 / 1;
+  border-radius: 25px;
+  background-color: #ff8f00;
+  border: 3px solid #cfd8dc;
+  color: #1a237e;
+  font-family: 'Shadows Into Light', cursive;
+}
 
-.kromhout1 {   
-  height: 100px;   
-  width: 100px;   
-  position: absolute;   
-  top: 250px;   
-  left: 550px; 
-}  
+.btn:hover {
+  cursor: grab;
+  transform: translateX(-50%) scale(1.02);
+  background-color: #cfd8dc;
+  border: 3px solid #ff8f00;
+}
 
-.h32 {   
-  position: absolute; 
-  top: 250px;   
-  left: 50px; 
-}  
+.btnfoto {
+  width: 30%;
+  aspect-ratio: 2 / 1;
+  border-radius: 25px;
+  background-color: #ff8f00;
+  border: 3px solid #cfd8dc;
+  color: #1a237e;
+  font-family: 'Shadows Into Light', cursive;
+}
 
-.h31 {   
-  position: absolute; 
-  top: 350px;   
-  left: 350px; 
+.btnfoto:hover {
+  cursor: grab;
+  transform: scale(1.02);
+  background-color: #cfd8dc;
+  border: 3px solid #ff8f00;
 }
 
 #achter-foto {
-  width: 200px;
+  width: 40%;
   height: auto;
   border-radius: 15px;
   border: 2px solid #1a237e;
@@ -165,20 +187,3 @@ body {
   margin-top: 10px;
   transition: opacity 0.3s;
 }
-
-.btnfoto {
-  width: 100px;   
-  height: 50px;   
-  border-radius: 25px;   
-  background-color: #ff8f00;   
-  border: 3px solid #cfd8dc;   
-  color: #1a237e;   
-  font-family: 'Shadows Into Light', cursive;   
-}
-
-.btnfoto:hover {   
-  cursor: grab;   
-  transform: scale(1.02);   
-  background-color: #cfd8dc;   
-  border: 3px solid #ff8f00; 
-}  
